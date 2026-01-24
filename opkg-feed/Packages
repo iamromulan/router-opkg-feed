@@ -12,15 +12,15 @@ Description: iamromulan's general first system patch for hiveton-h5000m ImortalW
 
 
 Package: luci-app-qfirehose
-Version: 1.0.0-r1
+Version: 1.1
 Depends: libc, luci-base, qfirehose, unzip, debugfs, luci-compat
 Source: feeds/base/luci-app-qfirehose
 Section: luci
 Architecture: all
-Maintainer: OpenWrt LuCI community
-MD5Sum: 5c5cab0c66d4ee679f77c4ce2e596d25
-Size: 6960
-Filename: luci-app-qfirehose_1.0.0-r1_all.ipk
+Maintainer: github.com/iamromulan
+MD5Sum: 626ceb29bc0a645ce12c65b54a01dc15
+Size: 6335
+Filename: luci-app-qfirehose_1.1_all.ipk
 SourceName: luci-app-qfirehose
 License: GPLv3
 Section: luci
