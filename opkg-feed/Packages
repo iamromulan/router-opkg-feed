@@ -38,6 +38,20 @@ Description: speedtest.net CLI
 License: GPLv3
 
 
+Package: qfirehose
+Version: 1.6.0
+Depends: libc
+Section: util
+Architecture: aarch64_cortex-a53
+Source: github/iamromulan/router-opkg-feed/Hiveton-H5000M
+Section: utils
+Maintainer: iamromulan
+MD5Sum: a55cd6b20fa2cc441a6507b7ef434701
+Size: 467688
+Filename: qfirehose_1.6.0_aarch64_cortex-a53.ipk
+Description:  Utility that is able to flash firmwares on Quectel's modems. Updated by iamromulan.
+
+
 Package: tailscale
 Version: 1.92.5
 Depends: libc, tailscaled
