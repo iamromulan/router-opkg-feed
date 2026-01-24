@@ -1,3 +1,16 @@
+Package: iamromulan-hiveton-h5000m
+Version: 1
+Depends: libc
+Section: base
+Architecture: aarch64_cortex-a53
+Maintainer: Cameron Thompson iamromulan@github.com
+MD5Sum: cf084a31281dee1e958f92f6504e48f6
+Size: 1925
+Filename: iamromulan-hiveton-h5000m_1_aarch64_cortex-a53.ipk
+Source: github.com/iamromulan
+Description: iamromulan's general first system patch for hiveton-h5000m ImortalWRT
+
+
 Package: luci-app-tailscale
 Version: 1.2.3-2
 Depends: libc, tailscale, tailscaled (>= 1.78.1-4)
