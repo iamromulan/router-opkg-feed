@@ -1,7 +1,6 @@
 #!/bin/sh
 
 # Script for building OpenWRT .ipk packages using tar by iamromulan
-# Works with SDXPPINN OpenWRT - iamromulan
 # This script accepts an optional path to the directory containing the `CONTROL` and `root` directories.
 # Usage: ./build-ipk.sh [path]
 # If no path is provided, the script will look in the current directory for `CONTROL` and `root` directories.
@@ -64,7 +63,7 @@ chown -R root:root debian-binary
 
 # Combine the components into the final .ipk file using tar
 echo "Packaging ${ipkname}..."
-tar -czvf "$ipkname" debian-binary control.tar.gz data.tar.gz
+tar -czvf "$ipkname" ./debian-binary ./control.tar.gz ./data.tar.gz
 
 # Clean up intermediate files
 echo "Cleaning up temporary files..."
