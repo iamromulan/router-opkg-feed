@@ -1,12 +1,12 @@
 Package: iamromulan-hiveton-h5000m
-Version: 1
+Version: 1.1
 Depends: libc
 Section: base
 Architecture: aarch64_cortex-a53
 Maintainer: Cameron Thompson iamromulan@github.com
-MD5Sum: f37012d469e126300614d1ba11f18457
-Size: 1925
-Filename: iamromulan-hiveton-h5000m_1_aarch64_cortex-a53.ipk
+MD5Sum: 50a46ebad37fd07fc6d87f813fdae67e
+Size: 1935
+Filename: iamromulan-hiveton-h5000m_1.1_aarch64_cortex-a53.ipk
 Source: github.com/iamromulan
 Description: iamromulan's general first system patch for hiveton-h5000m ImortalWRT
 
