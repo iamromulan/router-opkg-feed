@@ -1,15 +1,15 @@
 Package: qfirehose
-Version: 1.4.9-1
+Version: 1.6.0
 Depends: libc
-Source: feeds/packages/utils/qfirehose
+Source: github/iamromulan/router-opkg-feed/Hiveton-H5000M
 SourceName: qfirehose
 LicenseFiles: NOTICE
 Section: utils
 SourceDateEpoch: 1761233961
-Maintainer: Oskari Rauta <oskari.rauta@gmail.com>
+Maintainer: iamromulan
 Architecture: aarch64_cortex-a53
 Installed-Size: 40230
-Description:  Utility that is able to flash firmwares on Quectel's modems.
+Description:  Utility that is able to flash firmwares on Quectel's modems. Updated by iamromulan.
  Usage: qfirehose -f FW_PATH
  
  Warning.
