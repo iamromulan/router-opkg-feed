@@ -1,0 +1,86 @@
+#!/bin/ash
+
+repo_iamromulan-hiveton-h5000m_check() {
+    # Define the repository and key details
+    STABLE_REPO_LINE="src/gz iamromulan-hiveton-h5000m https://raw.githubusercontent.com/iamromulan/router-opkg-feed/Hiveton-H5000M/opkg-feed"
+    DEV_REPO_LINE="src/gz iamromulan-hiveton-h5000m https://raw.githubusercontent.com/iamromulan/router-opkg-feed/development-Hiveton-H5000M/opkg-feed"
+    FEEDS_FILE="/etc/opkg/customfeeds.conf"
+    PUBLIC_KEY_URL="https://raw.githubusercontent.com/iamromulan/router-opkg-feed/Hiveton-H5000M/opkg-feed/iamromulan-router-repo.key"
+    TMP_KEY="/tmp/iamromulan-router-repo.key"
+    KEYS_DIR="/etc/opkg/keys"
+
+    # Remove duplicate and development repo lines
+    if grep -q "iamromulan-hiveton-h5000m" "$FEEDS_FILE"; then
+        echo "Cleaning up duplicate or development repo entries in $FEEDS_FILE."
+        sed -i "/iamromulan-hiveton-h5000m/d" "$FEEDS_FILE"
+    fi
+
+    # Add the stable repository to customfeeds.conf
+    echo "Adding stable repository to $FEEDS_FILE."
+    echo "$STABLE_REPO_LINE" >> "$FEEDS_FILE" || {
+        echo "Error: Could not add repository to $FEEDS_FILE."
+        return 1
+    }
+
+    # Download the key temporarily for verification
+    curl -fsSL "$PUBLIC_KEY_URL" -o "$TMP_KEY" || {
+        echo "Error: Failed to download public key from $PUBLIC_KEY_URL."
+        return 1
+    }
+
+    # Check if the key already exists in /etc/opkg/keys/
+    local key_installed=0
+    for key in "$KEYS_DIR"/*; do
+        if cmp -s "$TMP_KEY" "$key"; then
+            echo "Public key already installed: $(basename "$key")."
+            key_installed=1
+            break
+        fi
+    done
+
+    # If the key is not installed, add it
+    if [ "$key_installed" -eq 0 ]; then
+        echo "Installing public key..."
+        opkg-key add "$TMP_KEY" || {
+            echo "Error: Failed to add public key."
+            rm -f "$TMP_KEY"
+            return 1
+        }
+        echo "Public key installed successfully."
+    fi
+
+    # Clean up temporary key file
+    rm -f "$TMP_KEY"
+
+    return 0
+}
+
+
+opkg_arch_patch() {
+if [ ! -f /etc/opkg/arch.conf ]; then
+ cat > /etc/opkg/arch.conf << 'EOF'
+arch all 1
+arch noarch 1
+arch hiveton-h5000m 2
+arch aarch64_cortex-a53 10
+arch aarch64_generic 20
+EOF
+else
+ for arch in "all 1" "noarch 1" "hiveton-h5000m 2" "aarch64_cortex-a53 10" "aarch64_generic 20"; do
+   if ! grep -q "^arch $arch$" /etc/opkg/arch.conf; then
+     echo "arch $arch" >> /etc/opkg/arch.conf
+   fi
+ done
+fi
+}
+
+
+# Begin Patch Process 
+echo -e "\e[92mBegining iamromulan's hiveton-h5000m patch process...\e[0m"
+echo -e "\e[92mEnsuring iamromulan's hiveton-h5000m repo is listed in customfeeds and public key is installed...\e[0m"
+repo_iamromulan-hiveton-h5000m_check
+echo -e "\e[92miamromulan's hiveton-h5000m repo source and key is installed.\e[0m"
+echo -e "\e[92mEnsuring opkg reconizes needed archs\e[0m"
+opkg_arch_patch
+echo -e "\e[92mhiveton-h5000m patch process complete.\e[0m"
+exit 0
