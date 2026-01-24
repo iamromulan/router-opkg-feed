@@ -1,6 +1,6 @@
 Package: luci-app-qfirehose
 Version: 1.0.0-r1
-Depends: libc, luci-base, qfirehose, unzip, kmod-usbmon, debugfs, luci-compat
+Depends: libc, luci-base, qfirehose, unzip, debugfs, luci-compat
 Source: feeds/base/luci-app-qfirehose
 SourceName: luci-app-qfirehose
 License: GPLv3
