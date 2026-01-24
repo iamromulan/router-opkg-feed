@@ -1,6 +1,6 @@
 # Hiveton-H5000M opkg/ipk feed
 
-# Setup
+## Setup
 
 The easiest way to add this package source to your Hiveton-H500M is to install the base repo package.
 From Luci software (System --> Software) where it says "Download and install package" paste the following in and hit ok
