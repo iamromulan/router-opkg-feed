@@ -1,5 +1,5 @@
 Package: luci-app-qfirehose
-Version: 1.0.0-r1
+Version: 1.1
 Depends: libc, luci-base, qfirehose, unzip, debugfs, luci-compat
 Source: feeds/base/luci-app-qfirehose
 SourceName: luci-app-qfirehose
@@ -8,7 +8,7 @@ LicenseFiles: LICENSE
 Section: luci
 SourceDateEpoch: 1736704827
 URL: https://github.com/openwrt/luci
-Maintainer: OpenWrt LuCI community
+Maintainer: github.com/iamromulan
 Architecture: all
 Installed-Size: 30720
 Description:  Web interface for QFirehose, a tool for flashing Qualcomm firmware on OpenWrt
