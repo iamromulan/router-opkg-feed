@@ -1,6 +1,6 @@
 #!/bin/ash
 
-repo_iamromulan-hiveton-h5000m_check() {
+repo_iamromulan_hiveton_h5000m_check() {
     # Define the repository and key details
     STABLE_REPO_LINE="src/gz iamromulan-hiveton-h5000m https://raw.githubusercontent.com/iamromulan/router-opkg-feed/Hiveton-H5000M/opkg-feed"
     DEV_REPO_LINE="src/gz iamromulan-hiveton-h5000m https://raw.githubusercontent.com/iamromulan/router-opkg-feed/development-Hiveton-H5000M/opkg-feed"
@@ -78,7 +78,7 @@ fi
 # Begin Patch Process 
 echo -e "\e[92mBegining iamromulan's hiveton-h5000m patch process...\e[0m"
 echo -e "\e[92mEnsuring iamromulan's hiveton-h5000m repo is listed in customfeeds and public key is installed...\e[0m"
-repo_iamromulan-hiveton-h5000m_check
+repo_iamromulan_hiveton_h5000m_check
 echo -e "\e[92miamromulan's hiveton-h5000m repo source and key is installed.\e[0m"
 echo -e "\e[92mEnsuring opkg reconizes needed archs\e[0m"
 opkg_arch_patch
