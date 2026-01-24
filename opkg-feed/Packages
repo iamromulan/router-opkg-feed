@@ -11,6 +11,23 @@ Source: github.com/iamromulan
 Description: iamromulan's general first system patch for hiveton-h5000m ImortalWRT
 
 
+Package: luci-app-qfirehose
+Version: 1.0.0-r1
+Depends: libc, luci-base, qfirehose, unzip, debugfs, luci-compat
+Source: feeds/base/luci-app-qfirehose
+Section: luci
+Architecture: all
+Maintainer: OpenWrt LuCI community
+MD5Sum: 5c5cab0c66d4ee679f77c4ce2e596d25
+Size: 6960
+Filename: luci-app-qfirehose_1.0.0-r1_all.ipk
+SourceName: luci-app-qfirehose
+License: GPLv3
+Section: luci
+SourceDateEpoch: 1736704827
+Description:  Web interface for QFirehose, a tool for flashing Qualcomm firmware on OpenWrt, from Iamrommulan's repo.
+
+
 Package: luci-app-tailscale
 Version: 1.2.3-2
 Depends: libc, tailscale, tailscaled (>= 1.78.1-4)
