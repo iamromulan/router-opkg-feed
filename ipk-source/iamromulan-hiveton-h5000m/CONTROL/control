@@ -1,6 +1,6 @@
 Package: iamromulan-hiveton-h5000m
 Depends: libc
-Version: 1
+Version: 1.1
 Architecture: aarch64_cortex-a53
 Maintainer: Cameron Thompson iamromulan@github.com
 Source: github.com/iamromulan
