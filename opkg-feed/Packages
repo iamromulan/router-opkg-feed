@@ -18,8 +18,8 @@ Source: feeds/base/luci-app-qfirehose
 Section: luci
 Architecture: all
 Maintainer: github.com/iamromulan
-MD5Sum: 626ceb29bc0a645ce12c65b54a01dc15
-Size: 6335
+MD5Sum: 12e4a4e4fb93bf73c16cdf7159c83aa0
+Size: 6327
 Filename: luci-app-qfirehose_1.1_all.ipk
 SourceName: luci-app-qfirehose
 License: GPLv3
